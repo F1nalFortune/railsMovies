@@ -1,0 +1,30 @@
+<div class="box">
+  <p>Search Results Here</p>
+  <%= link_to 'Back', movies_path, :class => 'btn waves-effect' %>
+</div>
+<div  id="my_object" class="container">
+  <div class=" row contact">
+        <% @movies.each do |movie| %>
+          <div class="col s12 m4">
+            <div class="card blue-grey darken-1 hoverable">
+              <div class="card-content white-text">
+                <h2 class="center"><%= movie.title %></h2>
+                <h5 class="center"><%= movie.genre %></h5>
+                <h5 class="center"><%= movie.actor %></h5>
+                  <div class="row">
+                    <div class="col s4 center">
+                      <%= link_to 'Show', movie_path(movie) %>
+                    </div>
+                    <div class="col s4 center">
+                      <%= link_to 'Edit', edit_movie_path(movie) %>
+                    </div>
+                    <div class="col s4 center">
+                      <%= link_to 'Destroy', movie, method: :delete %>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <% end %> 
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <h1 class="center"> New Movie </h1>
+    <%= form_for Movie.new do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :genre %>
+      <%= f.text_field :genre %>
+
+      <%= f.label :actor %>
+      <%= f.text_field :actor %>
+      <div class="row">
+        <%= link_to 'Back', movies_path, :class => 'btn waves-effect' %>
+        <%= f.submit 'Create Movie', :class => 'btn waves-effect fright' %>
+      </div>
+    <% end %>
+  </div>
+</div>
